@@ -51,7 +51,7 @@ const sec_display = document.querySelector('.secondary')
 buttons.forEach((button)=>{
     button.addEventListener('click', ()=>{
         processInput(button)
-        // setSecondaryDisplay(button)
+        setSecondaryDisplay(button)
     })
 })
 
@@ -71,13 +71,19 @@ let updateDisplay = (input) =>{
     display.textContent = input
 }
 
-// let setSecondaryDisplay = (input)=>{
-//     if(num1 == null && num2 == null && operator1 == null){
-//         sec_display.textContent = ''
-//     }else{
-//         sec_display.textContent += input.value
-//     }
-// }
+// console.log('i got here')
+
+let setSecondaryDisplay = (input)=>{
+    let isEqualPressed = true
+    if(num1 == null && num2 == null && operator1 == null){
+        sec_display.textContent = ''
+        console.log('i got here 1')
+    }
+    else{
+        sec_display.innerHTML += ` ${input.value} `
+        console.log('i got here 2')
+    }
+}
 
 let clear = () =>{
     num1 = null
@@ -105,7 +111,6 @@ let processNumber = (input) =>{
         }
         updateDisplay(num2)
     }
-    console.log("Masuk")
 }
 
 
