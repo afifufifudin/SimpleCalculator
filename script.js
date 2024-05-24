@@ -22,6 +22,10 @@ let divide = (num1, num2)=>{
     return num1/num2
 }
 
+let power = (num1, num2)=>{
+    return num1**num2
+}
+
 let operate = (number1, number2, operator) =>{
     let num1 = Number(number1)
     let num2 = Number(number2)
@@ -34,17 +38,20 @@ let operate = (number1, number2, operator) =>{
             return multiply(num1, num2);
         case '÷':
             return divide(num1, num2);
+        case "^":
+            return power(num1, num2)
     }
 }
 
 
 const buttons = document.querySelectorAll('.button')
-const display = document.querySelector('.current')
-
+const display = document.querySelector('.primary')
+const sec_display = document.querySelector('.secondary')
 
 buttons.forEach((button)=>{
     button.addEventListener('click', ()=>{
         processInput(button)
+        // setSecondaryDisplay(button)
     })
 })
 
@@ -63,6 +70,14 @@ let processInput = (input) =>{
 let updateDisplay = (input) =>{
     display.textContent = input
 }
+
+// let setSecondaryDisplay = (input)=>{
+//     if(num1 == null && num2 == null && operator1 == null){
+//         sec_display.textContent = ''
+//     }else{
+//         sec_display.textContent += input.value
+//     }
+// }
 
 let clear = () =>{
     num1 = null

@@ -52,7 +52,7 @@ body{
     opacity: 0.8;
 }
 
-.before{
+.secondary{
     height: 30%;
     /* background-color: #3b3b3b; */
     text-align: right;
@@ -61,7 +61,7 @@ body{
     color: #4f4f4f;
 }
 
-.current{
+.primary{
     text-align: right;
     font-size: 65px;
     font-weight: 700;
